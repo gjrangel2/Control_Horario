@@ -179,14 +179,16 @@ export const rejectCorrection = async (correctionId, reviewerId, comment = '') =
 }
 
 /**
- * Obtener lista de todos los empleados (para admin)
+ * Obtener lista de todos los usuarios (para admin)
+ * Update: Incluye administradores también
  */
-export const getAllEmployees = async () => {
+export const getAllUsers = async () => {
     if (isDemoMode()) {
         return [
             { id: 'demo-1', full_name: 'Juan Pérez', email: 'juan@example.com', role: 'employee' },
             { id: 'demo-2', full_name: 'María García', email: 'maria@example.com', role: 'employee' },
-            { id: 'demo-3', full_name: 'Carlos López', email: 'carlos@example.com', role: 'employee' }
+            { id: 'demo-3', full_name: 'Carlos López', email: 'carlos@example.com', role: 'employee' },
+            { id: 'demo-admin', full_name: 'Admin User', email: 'admin@timetrack.app', role: 'admin' }
         ]
     }
 
@@ -194,7 +196,6 @@ export const getAllEmployees = async () => {
     const { data, error } = await client
         .from('profiles')
         .select('id, full_name, email, role')
-        .neq('role', 'admin')
         .order('full_name')
 
     if (error) throw new Error(error.message)
@@ -207,5 +208,5 @@ export default {
     getAllCorrections,
     approveCorrection,
     rejectCorrection,
-    getAllEmployees
+    getAllUsers
 }

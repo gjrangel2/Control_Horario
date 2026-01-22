@@ -9,18 +9,25 @@ import timeTrackingService from '../services/timeTracking'
 import reportsService from '../services/reports'
 import Card from '../components/common/Card'
 import Button from '../components/common/Button'
+import UserSelector from '../components/common/UserSelector'
 import './History.css'
 
 const History = () => {
     const { profile } = useAuth()
+    const isAdmin = profile?.role === 'admin'
+    const [selectedUserId, setSelectedUserId] = useState(null)
+    const targetUserId = selectedUserId || profile?.id
+
     const [sessions, setSessions] = useState([])
     const [loading, setLoading] = useState(true)
     const [filter, setFilter] = useState('week') // week, month, all
 
     useEffect(() => {
         const loadHistory = async () => {
+            if (!targetUserId) return
+
             try {
-                const data = await timeTrackingService.getSessionHistory(profile?.id, {
+                const data = await timeTrackingService.getSessionHistory(targetUserId, {
                     limit: filter === 'week' ? 7 : filter === 'month' ? 30 : 100
                 })
                 setSessions(data)
@@ -32,7 +39,7 @@ const History = () => {
         }
 
         loadHistory()
-    }, [profile?.id, filter])
+    }, [targetUserId, filter])
 
     const formatDate = (dateStr) => {
         return new Date(dateStr).toLocaleDateString('es-ES', {
@@ -67,6 +74,13 @@ const History = () => {
                     <h2 className="history__title">Historial de Sesiones</h2>
                     <p className="history__subtitle">Revisa tus registros de jornada</p>
                 </div>
+
+                {isAdmin && (
+                    <UserSelector
+                        selectedUserId={selectedUserId}
+                        onUserSelect={setSelectedUserId}
+                    />
+                )}
 
                 <div className="history__filters">
                     <Button

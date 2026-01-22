@@ -23,6 +23,29 @@
     margin: 0;
 }
 
+.header__menu-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-gray-600);
+    padding: var(--spacing-2);
+    margin-right: var(--spacing-2);
+}
+
+.header__menu-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+@media (max-width: 1024px) {
+    .header__menu-btn {
+        display: flex;
+    }
+}
+
 .header__right {
     display: flex;
     align-items: center;

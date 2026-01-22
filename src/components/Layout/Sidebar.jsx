@@ -66,7 +66,7 @@ const Icons = {
     )
 }
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen, onClose }) => {
     const { profile, isDemoMode } = useAuth()
     const location = useLocation()
 
@@ -78,6 +78,7 @@ const Sidebar = () => {
     ]
 
     const adminNavItems = [
+        { path: '/approvals', icon: Icons.Corrections, label: 'Aprobaciones' },
         { path: '/admin', icon: Icons.Users, label: 'Administración' }
     ]
 
@@ -89,7 +90,7 @@ const Sidebar = () => {
     const isAdmin = profile?.role === 'admin' || profile?.role === 'supervisor'
 
     return (
-        <aside className="sidebar">
+        <aside className={`sidebar ${isOpen ? 'sidebar--open' : ''}`}>
             {/* Logo */}
             <div className="sidebar__logo">
                 <div className="sidebar__logo-icon">

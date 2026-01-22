@@ -42,7 +42,7 @@ const LayoutWrapper = () => {
 
 function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
             <AuthProvider>
                 <SessionProvider>
                     <Routes>
@@ -60,6 +60,7 @@ function App() {
                             <Route path="history" element={<History />} />
                             <Route path="reports" element={<Reports />} />
                             <Route path="corrections" element={<Corrections />} />
+                            <Route path="approvals" element={<Corrections view="approvals" />} />
                             <Route path="settings" element={<Settings />} />
                             <Route path="admin" element={<Dashboard />} />
                             <Route path="help" element={<Settings />} />

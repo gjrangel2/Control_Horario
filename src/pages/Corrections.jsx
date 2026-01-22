@@ -13,9 +13,10 @@ import Input from '../components/common/Input'
 import Modal from '../components/common/Modal'
 import './Corrections.css'
 
-const Corrections = () => {
+const Corrections = ({ view }) => {
     const { profile } = useAuth()
     const isAdmin = profile?.role === 'admin'
+    const isApprovalsView = view === 'approvals'
 
     const [activeTab, setActiveTab] = useState('pending')
     const [corrections, setCorrections] = useState([])
@@ -35,7 +36,7 @@ const Corrections = () => {
 
     useEffect(() => {
         loadCorrections()
-    }, [profile?.id, activeTab, isAdmin])
+    }, [profile?.id, activeTab, isAdmin, isApprovalsView])
 
     const loadCorrections = async () => {
         setLoading(true)
@@ -155,11 +156,15 @@ const Corrections = () => {
         <div className="corrections">
             <div className="corrections__header">
                 <div>
-                    <h2 className="corrections__title">Correcciones</h2>
+                    <h2 className="corrections__title">
+                        {isApprovalsView ? 'Aprobaciones' : 'Correcciones'}
+                    </h2>
                     <p className="corrections__subtitle">
-                        {isAdmin
-                            ? 'Revisa y gestiona todas las solicitudes de corrección'
-                            : 'Gestiona tus solicitudes de corrección de horario'
+                        {isApprovalsView
+                            ? 'Gestiona las solicitudes pendientes de tu equipo'
+                            : isAdmin
+                                ? 'Revisa y gestiona todas las solicitudes de corrección'
+                                : 'Gestiona tus solicitudes de corrección de horario'
                         }
                     </p>
                 </div>
