@@ -1,0 +1,192 @@
+/* Settings Page Styles */
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-5);
+    animation: fadeIn var(--transition-normal);
+}
+
+.settings__header {
+    margin-bottom: var(--spacing-2);
+}
+
+.settings__title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-900);
+    margin: 0;
+}
+
+.settings__subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+    margin: var(--spacing-1) 0 0 0;
+}
+
+.settings__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-5);
+}
+
+@media (max-width: 900px) {
+    .settings__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.settings__section-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-800);
+    margin: 0 0 var(--spacing-5) 0;
+}
+
+/* Avatar */
+.settings__avatar-section {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-5);
+}
+
+.settings__avatar {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+}
+
+/* Form */
+.settings__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-5);
+}
+
+.settings__actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Options */
+.settings__options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.settings__option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-4);
+    background: var(--color-gray-50);
+    border-radius: var(--radius-lg);
+}
+
+.settings__option-label {
+    display: block;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-gray-800);
+}
+
+.settings__option-desc {
+    display: block;
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-500);
+    margin-top: var(--spacing-1);
+}
+
+/* Toggle */
+.settings__toggle {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 28px;
+    cursor: pointer;
+}
+
+.settings__toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.settings__toggle-slider {
+    position: absolute;
+    inset: 0;
+    background: var(--color-gray-300);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-fast);
+}
+
+.settings__toggle-slider::before {
+    content: '';
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background: var(--color-white);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+}
+
+.settings__toggle input:checked+.settings__toggle-slider {
+    background: var(--color-primary);
+}
+
+.settings__toggle input:checked+.settings__toggle-slider::before {
+    transform: translateX(20px);
+}
+
+/* Info */
+.settings__info-card {
+    grid-column: span 2;
+}
+
+@media (max-width: 900px) {
+    .settings__info-card {
+        grid-column: span 1;
+    }
+}
+
+.settings__info-list {
+    display: flex;
+    gap: var(--spacing-6);
+    flex-wrap: wrap;
+}
+
+.settings__info-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+}
+
+.settings__info-item span:first-child {
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-500);
+}
+
+.settings__info-item span:last-child {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-gray-800);
+}
+
+.settings__info-badge {
+    padding: var(--spacing-1) var(--spacing-2);
+    background: var(--color-primary-bg);
+    color: var(--color-primary);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+}

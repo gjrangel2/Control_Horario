@@ -1,0 +1,130 @@
+/* Dashboard Page Styles */
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-6);
+    animation: fadeIn var(--transition-normal);
+}
+
+/* Welcome Section */
+.dashboard__welcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboard__greeting {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-800);
+    margin: 0;
+}
+
+.dashboard__greeting span {
+    color: var(--color-primary);
+}
+
+.dashboard__date {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+    margin: var(--spacing-1) 0 0 0;
+    text-transform: capitalize;
+}
+
+/* KPI Cards Grid */
+.dashboard__kpis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-5);
+}
+
+@media (max-width: 1200px) {
+    .dashboard__kpis {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .dashboard__kpis {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Main Content Grid */
+.dashboard__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-rows: auto;
+    gap: var(--spacing-5);
+}
+
+.dashboard__clock-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-5);
+}
+
+.dashboard__chart-section {
+    min-height: 350px;
+}
+
+.dashboard__insights-section {
+    min-height: 350px;
+}
+
+@media (max-width: 1200px) {
+    .dashboard__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dashboard__insights-section {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard__insights-section {
+        grid-column: span 1;
+    }
+}
+
+/* Quick Stats */
+.dashboard__quick-stats h4 {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-700);
+    margin: 0 0 var(--spacing-4) 0;
+}
+
+.dashboard__quick-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-4);
+}
+
+.dashboard__quick-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--spacing-3);
+    background: var(--color-gray-50);
+    border-radius: var(--radius-lg);
+}
+
+.dashboard__quick-stat-value {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-800);
+}
+
+.dashboard__quick-stat-label {
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-500);
+    margin-top: var(--spacing-1);
+}

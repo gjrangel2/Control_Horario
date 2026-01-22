@@ -1,0 +1,104 @@
+/* ClockActions Component Styles */
+
+.clock-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-4);
+    padding: var(--spacing-6);
+    background: var(--color-white);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-card);
+    text-align: center;
+}
+
+.clock-actions--active {
+    background: linear-gradient(135deg, #f8fffe 0%, #f0fdf9 100%);
+    border: 1px solid var(--color-primary-bg);
+}
+
+.clock-actions__main {
+    width: 100%;
+    max-width: 280px;
+}
+
+.clock-actions__hint {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+    margin: 0;
+}
+
+.clock-actions__error {
+    font-size: var(--font-size-sm);
+    color: var(--color-danger);
+    margin: 0;
+    padding: var(--spacing-2) var(--spacing-4);
+    background: rgba(255, 107, 107, 0.1);
+    border-radius: var(--radius-md);
+}
+
+/* Timer */
+.clock-actions__timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-3);
+    width: 100%;
+}
+
+.clock-actions__timer-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-6);
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    min-width: 200px;
+}
+
+.clock-actions__timer-display--break {
+    background: linear-gradient(135deg, #fff9f0 0%, #fff5e6 100%);
+    box-shadow: 0 4px 14px rgba(255, 169, 77, 0.2);
+}
+
+.clock-actions__timer-label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-gray-500);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.clock-actions__timer-value {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    font-variant-numeric: tabular-nums;
+    color: var(--color-primary);
+    line-height: 1;
+}
+
+.clock-actions__timer-display--break .clock-actions__timer-value {
+    color: var(--color-warning);
+}
+
+.clock-actions__timer-work {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+}
+
+/* Buttons */
+.clock-actions__buttons {
+    display: flex;
+    gap: var(--spacing-3);
+    width: 100%;
+    justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .clock-actions__buttons {
+        flex-direction: column;
+    }
+}

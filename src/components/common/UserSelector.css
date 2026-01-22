@@ -1,0 +1,49 @@
+/* User Selector Styles */
+
+.user-selector {
+    position: relative;
+    min-width: 250px;
+}
+
+.user-selector__select {
+    width: 100%;
+    padding: var(--spacing-2) var(--spacing-8) var(--spacing-2) var(--spacing-3);
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--radius-md);
+    background-color: var(--color-white);
+    color: var(--color-gray-800);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    appearance: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.user-selector__select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(32, 201, 151, 0.15);
+}
+
+.user-selector__icon {
+    position: absolute;
+    right: var(--spacing-3);
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--color-gray-400);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-selector__icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.user-selector--loading {
+    padding: var(--spacing-2);
+    color: var(--color-gray-500);
+    font-size: var(--font-size-sm);
+}

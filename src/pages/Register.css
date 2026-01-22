@@ -1,0 +1,229 @@
+/* Register Page Styles */
+
+.register-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: var(--spacing-4);
+}
+
+.register-page__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1000px;
+    width: 100%;
+    background: var(--color-white);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+}
+
+/* Branding Side */
+.register-page__branding {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: var(--spacing-12) var(--spacing-8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--color-white);
+}
+
+.register-page__logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: var(--spacing-5);
+}
+
+.register-page__logo svg {
+    width: 100%;
+    height: 100%;
+}
+
+.register-page__title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    margin: 0;
+    background: linear-gradient(90deg, var(--color-white) 0%, var(--color-primary-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.register-page__subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-400);
+    margin: var(--spacing-2) 0 var(--spacing-8) 0;
+}
+
+.register-page__benefits {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+}
+
+.register-page__benefit {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-300);
+}
+
+.register-page__benefit-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: rgba(32, 201, 151, 0.2);
+    color: var(--color-primary);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+}
+
+/* Form Side */
+.register-page__form-container {
+    padding: var(--spacing-8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-page__card {
+    width: 100%;
+    max-width: 400px;
+    box-shadow: none;
+    border: none;
+}
+
+.register-page__form-header {
+    text-align: center;
+    margin-bottom: var(--spacing-5);
+}
+
+.register-page__form-header h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+    margin: 0;
+}
+
+.register-page__form-header p {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+    margin: var(--spacing-2) 0 0 0;
+}
+
+.register-page__demo-notice {
+    display: flex;
+    gap: var(--spacing-3);
+    padding: var(--spacing-3);
+    background: linear-gradient(135deg, rgba(255, 169, 77, 0.1) 0%, rgba(255, 213, 59, 0.1) 100%);
+    border: 1px solid rgba(255, 169, 77, 0.3);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-4);
+}
+
+.register-page__demo-notice span:first-child {
+    font-size: var(--font-size-lg);
+}
+
+.register-page__demo-notice strong {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-800);
+}
+
+.register-page__demo-notice p {
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-600);
+    margin: 0;
+}
+
+.register-page__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.register-page__error {
+    padding: var(--spacing-3) var(--spacing-4);
+    background: rgba(255, 107, 107, 0.1);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    border-radius: var(--radius-lg);
+    color: var(--color-danger);
+    font-size: var(--font-size-sm);
+    text-align: center;
+}
+
+.register-page__login {
+    text-align: center;
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    margin: var(--spacing-5) 0 0 0;
+}
+
+.register-page__login a {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-medium);
+}
+
+/* Success State */
+.register-page__success-card {
+    max-width: 450px;
+}
+
+.register-page__success {
+    text-align: center;
+}
+
+.register-page__success-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-5);
+    background: rgba(32, 201, 151, 0.1);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-page__success-icon svg {
+    width: 40px;
+    height: 40px;
+    color: var(--color-success);
+}
+
+.register-page__success h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+    margin: 0 0 var(--spacing-3) 0;
+}
+
+.register-page__success p {
+    color: var(--color-gray-600);
+    margin: 0 0 var(--spacing-6) 0;
+    line-height: 1.6;
+}
+
+.register-page__success strong {
+    color: var(--color-gray-800);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .register-page__container {
+        grid-template-columns: 1fr;
+    }
+
+    .register-page__branding {
+        padding: var(--spacing-6);
+    }
+
+    .register-page__benefits {
+        display: none;
+    }
+}

@@ -1,0 +1,116 @@
+/* Input Component Styles */
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.input-wrapper--full {
+    width: 100%;
+}
+
+.input__label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-gray-700);
+}
+
+.input__required {
+    color: var(--color-danger);
+    margin-left: var(--spacing-1);
+}
+
+.input__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input__field {
+    width: 100%;
+    padding: var(--spacing-3) var(--spacing-4);
+    font-family: inherit;
+    font-size: var(--font-size-base);
+    color: var(--color-gray-800);
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--radius-lg);
+    outline: none;
+    transition: all var(--transition-fast);
+}
+
+.input__field::placeholder {
+    color: var(--color-gray-400);
+}
+
+.input__field:hover:not(:disabled) {
+    border-color: var(--color-gray-400);
+}
+
+.input__field:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-bg);
+}
+
+/* Icon styles */
+.input-wrapper--icon-left .input__field {
+    padding-left: calc(var(--spacing-4) + 24px);
+}
+
+.input-wrapper--icon-right .input__field {
+    padding-right: calc(var(--spacing-4) + 24px);
+}
+
+.input__icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gray-500);
+    pointer-events: none;
+}
+
+.input__icon--left {
+    left: var(--spacing-3);
+}
+
+.input__icon--right {
+    right: var(--spacing-3);
+}
+
+.input__icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Error state */
+.input-wrapper--error .input__field {
+    border-color: var(--color-danger);
+}
+
+.input-wrapper--error .input__field:focus {
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.15);
+}
+
+.input-wrapper--error .input__icon {
+    color: var(--color-danger);
+}
+
+/* Disabled state */
+.input-wrapper--disabled .input__field {
+    background: var(--color-gray-100);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Helper text */
+.input__helper {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+    margin: 0;
+}
+
+.input__helper--error {
+    color: var(--color-danger);
+}

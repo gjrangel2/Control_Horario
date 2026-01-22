@@ -1,0 +1,74 @@
+/* WeeklyChart Component Styles */
+
+.weekly-chart {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.weekly-chart__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-4);
+}
+
+.weekly-chart__title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-800);
+    margin: 0;
+}
+
+.weekly-chart__subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+    margin: var(--spacing-1) 0 0 0;
+}
+
+.weekly-chart__badge {
+    padding: var(--spacing-1) var(--spacing-3);
+    background: var(--color-primary-bg);
+    color: var(--color-primary);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+}
+
+.weekly-chart__container {
+    flex: 1;
+    min-height: 200px;
+    position: relative;
+}
+
+/* Skeleton */
+.weekly-chart__skeleton {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.weekly-chart__skeleton-header {
+    height: 24px;
+    width: 150px;
+    background: var(--color-gray-200);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-4);
+    animation: pulse 2s infinite;
+}
+
+.weekly-chart__skeleton-bars {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: var(--spacing-3);
+    padding-top: var(--spacing-4);
+}
+
+.weekly-chart__skeleton-bar {
+    width: 40px;
+    background: var(--color-gray-200);
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    animation: pulse 2s infinite;
+}
