@@ -17,7 +17,7 @@ const UserSelector = ({ selectedUserId, onUserSelect }) => {
 
     const loadUsers = async () => {
         try {
-            const data = await correctionsService.getAllUsers()
+            const data = await correctionsService.getAllEmployees()
             setUsers(data)
         } catch (err) {
             console.error('Error loading users:', err)
@@ -27,7 +27,7 @@ const UserSelector = ({ selectedUserId, onUserSelect }) => {
     }
 
     if (loading) {
-        return <div className="user-selector user-selector--loading">Cargando usuarios...</div>
+        return <div className="user-selector user-selector--loading">Cargando empleados...</div>
     }
 
     return (
@@ -37,7 +37,7 @@ const UserSelector = ({ selectedUserId, onUserSelect }) => {
                 value={selectedUserId || ''}
                 onChange={(e) => onUserSelect(e.target.value || null)}
             >
-                <option value="">Todos los usuarios</option>
+                <option value="">Todos los empleados</option>
                 {users.map(user => (
                     <option key={user.id} value={user.id}>
                         {user.full_name} ({user.email})

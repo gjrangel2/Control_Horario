@@ -315,28 +315,3 @@
     border-color: var(--color-primary);
     box-shadow: 0 0 0 3px rgba(32, 201, 151, 0.15);
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-    .corrections__card-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--spacing-2);
-    }
-
-    .corrections__status {
-        align-self: flex-start;
-    }
-
-    .corrections__form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .corrections__actions {
-        width: 100%;
-    }
-
-    .corrections__actions button {
-        flex: 1;
-    }
-}

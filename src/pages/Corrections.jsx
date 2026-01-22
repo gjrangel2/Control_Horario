@@ -36,7 +36,7 @@ const Corrections = ({ view }) => {
 
     useEffect(() => {
         loadCorrections()
-    }, [profile?.id, activeTab, isAdmin, isApprovalsView])
+    }, [profile?.id, activeTab, isAdmin])
 
     const loadCorrections = async () => {
         setLoading(true)
