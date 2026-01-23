@@ -178,16 +178,27 @@ export const getActiveBreak = async (sessionId) => {
 /**
  * Obtener historial de sesiones
  */
-export const getSessionHistory = async (userId, options = {}) => {
-    if (isDemoMode()) {
-        return demoState.sessions
+if (isDemoMode()) {
+    // Mock data for specific users
+    if (userId === 'demo-1') { // Juan Perez
+        return [
+            { id: 's1', clock_in: '2026-01-20T08:00:00', clock_out: '2026-01-20T17:00:00', status: 'closed', total_work_minutes: 480, total_break_minutes: 60 },
+            { id: 's2', clock_in: '2026-01-21T08:15:00', clock_out: '2026-01-21T17:30:00', status: 'closed', total_work_minutes: 495, total_break_minutes: 60 }
+        ]
     }
+    if (userId === 'demo-2') { // Maria Garcia
+        return [
+            { id: 's3', clock_in: '2026-01-21T09:00:00', clock_out: '2026-01-21T18:00:00', status: 'closed', total_work_minutes: 480, total_break_minutes: 60 }
+        ]
+    }
+    return demoState.sessions // Return accumulated sessions for current user
+}
 
-    return await query('work_sessions', {
-        eq: { user_id: userId },
-        order: { column: 'clock_in', ascending: false },
-        limit: options.limit || 30
-    })
+return await query('work_sessions', {
+    eq: { user_id: userId },
+    order: { column: 'clock_in', ascending: false },
+    limit: options.limit || 30
+})
 }
 
 /**

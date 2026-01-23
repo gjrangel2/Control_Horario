@@ -11,10 +11,10 @@ const AuthContext = createContext(null)
 
 // Usuario demo para pruebas
 const DEMO_USER = {
-    id: 'demo-user-001',
-    email: 'demo@timetrack.app',
-    full_name: 'Usuario Demo',
-    role: 'employee',
+    id: 'demo-admin-001',
+    email: 'admin@timetrack.app',
+    full_name: 'Admin Demo',
+    role: 'admin',
     team_id: null,
     timezone: 'America/Bogota'
 }
